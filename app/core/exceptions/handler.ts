@@ -1,6 +1,7 @@
 import app from '@adonisjs/core/services/app'
 import { HttpContext, ExceptionHandler } from '@adonisjs/core/http'
 import type { StatusPageRange, StatusPageRenderer } from '@adonisjs/core/types/http'
+import { errors } from '@adonisjs/auth'
 
 export default class HttpExceptionHandler extends ExceptionHandler {
   /**
@@ -21,8 +22,8 @@ export default class HttpExceptionHandler extends ExceptionHandler {
    * to return the HTML contents to send as a response.
    */
   protected statusPages: Record<StatusPageRange, StatusPageRenderer> = {
-    '404': (error, { inertia }) => inertia.render('errors/not_found', { error }),
-    '500..599': (error, { inertia }) => inertia.render('errors/server_error', { error }),
+    '404': (error, { inertia }) => inertia.render('common/errors/not_found', { error }),
+    '500..599': (error, { inertia }) => inertia.render('common/errors/server_error', { error }),
   }
 
   /**
@@ -30,6 +31,10 @@ export default class HttpExceptionHandler extends ExceptionHandler {
    * response to the client
    */
   async handle(error: unknown, ctx: HttpContext) {
+    if (error instanceof errors.E_INVALID_CREDENTIALS) {
+      ctx.session.flash('errors.auth', 'Invalid credentials')
+    }
+
     return super.handle(error, ctx)
   }
 

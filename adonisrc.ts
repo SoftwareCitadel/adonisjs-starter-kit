@@ -38,6 +38,7 @@ export default defineConfig({
     () => import('@adonisjs/lucid/database_provider'),
     () => import('@adonisjs/auth/auth_provider'),
     () => import('@adonisjs/inertia/inertia_provider'),
+    () => import('@softwarecitadel/girouette/girouette_provider'),
   ],
 
   /*
@@ -48,15 +49,7 @@ export default defineConfig({
   | List of modules to import before starting the application.
   |
   */
-  preloads: [
-    () => import('#start/kernel'),
-
-    /**
-     * Map the route files.
-     */
-
-    () => import('#marketing/routes'),
-  ],
+  preloads: [() => import('#start/kernel')],
 
   /*
   |--------------------------------------------------------------------------
