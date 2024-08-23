@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title inertia>AdonisJS x Inertia x React</title>
+  <title inertia>{{ config('app.appName') }}</title>
 
   @viteReactRefresh()
   @inertiaHead()
+  @vite([
+    'app/common/ui/app/app.tsx', 
+    `app/${page.component.split('/')[0]}/ui/pages/${page.component.split('/').splice(1)}.tsx`
+  ])
   @vite(['inertia/app/app.tsx', `inertia/pages/${page.component}.tsx`])
 </head>
-
 <body>
   @inertia()
 </body>
-
 </html>

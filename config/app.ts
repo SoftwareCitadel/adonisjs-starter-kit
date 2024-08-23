@@ -13,6 +13,12 @@ import { defineConfig } from '@adonisjs/core/http'
 export const appKey = new Secret(env.get('APP_KEY'))
 
 /**
+ * The app name is used to refer to the application's name
+ * in different places of your AdonisJS project.
+ */
+export const appName = env.get('APP_NAME')
+
+/**
  * The configuration settings used by the HTTP server
  */
 export const http = defineConfig({

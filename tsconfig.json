@@ -4,5 +4,5 @@
     "rootDir": "./",
     "outDir": "./build"
   },
-  "exclude": ["./inertia/**/*", "node_modules", "build"]
+  "exclude": ["node_modules", "build", "app/**/ui/**/*", "resources/**/*"]
 }
