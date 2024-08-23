@@ -5,6 +5,7 @@ import '../css/app.css'
 import { hydrateRoot } from 'react-dom/client'
 import { createInertiaApp } from '@inertiajs/react'
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
+import React from 'react'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Ravel Console'
 

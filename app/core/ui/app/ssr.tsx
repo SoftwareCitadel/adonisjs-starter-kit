@@ -1,5 +1,6 @@
 import ReactDOMServer from 'react-dom/server'
 import { createInertiaApp } from '@inertiajs/react'
+import React from 'react'
 
 export default function render(page: any) {
   return createInertiaApp({

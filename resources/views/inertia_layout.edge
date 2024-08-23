@@ -9,12 +9,11 @@
   @viteReactRefresh()
   @inertiaHead()
   @vite([
-    'app/common/ui/app/app.tsx', 
+    'app/core/ui/app/app.tsx', 
     `app/${page.component.split('/')[0]}/ui/pages/${page.component.split('/').splice(1)}.tsx`
   ])
-  @vite(['inertia/app/app.tsx', `inertia/pages/${page.component}.tsx`])
 </head>
-<body>
+<body class="antialiased">
   @inertia()
 </body>
 </html>
