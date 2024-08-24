@@ -6,4 +6,9 @@ export default class MarketingController {
   landing({ inertia }: HttpContext) {
     return inertia.render('marketing/landing')
   }
+
+  @Get('/pricing', 'marketing.pricing')
+  pricing({ inertia }: HttpContext) {
+    return inertia.render('marketing/pricing')
+  }
 }

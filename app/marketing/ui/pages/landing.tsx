@@ -1,5 +1,10 @@
 import React from 'react'
+import Footer from '#marketing/ui/components/footer'
 
 export default function LandingPage() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>
+  return (
+    <>
+      <Footer />
+    </>
+  )
 }

@@ -14,6 +14,8 @@ const inertiaConfig = defineConfig({
   sharedData: {
     appName,
     errors: (ctx) => ctx.session?.flashMessages.get('errors'),
+    user: (ctx) => ctx.auth.user,
+    path: (ctx) => ctx.request.url(true),
   },
 
   /**

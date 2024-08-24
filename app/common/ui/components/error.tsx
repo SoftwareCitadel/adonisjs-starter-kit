@@ -2,11 +2,11 @@ import React from 'react'
 import useError from '../hooks/use_error'
 
 export interface ErrorProps {
-  key: string
+  errorKey?: string
 }
 
-export default function Error({ key }: ErrorProps) {
-  const error = useError(key)
+export default function Error({ errorKey }: ErrorProps) {
+  const error = useError(errorKey)
 
   if (!error) {
     return null

@@ -5,14 +5,42 @@ import Input from '#common/ui/components/input'
 import Link from '#common/ui/components/link'
 import Error from '#common/ui/components/error'
 import Button from '#common/ui/components/button'
+import { useForm } from '@inertiajs/react'
 
 export default function SignUp() {
+  const form = useForm({
+    fullName: '',
+    email: '',
+    password: '',
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    form.post('/auth/sign_up')
+  }
+
   return (
     <AuthLayout
       title="Create your account."
       description="Welcome! Please fill in the details to get started."
     >
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={handleSubmit}>
+        {/* Full name field */}
+        <div>
+          <Label htmlFor="fullName">Full Name</Label>
+          <Input
+            id="fullName"
+            name="fullName"
+            type="text"
+            placeholder="John Doe"
+            required
+            autoComplete="fullName"
+            value={form.data.fullName}
+            onChange={(e) => form.setData('fullName', e.target.value)}
+          />
+          <Error errorKey="fullName" />
+        </div>
+
         {/* Email field */}
         <div>
           <Label htmlFor="email">Email address</Label>
@@ -23,8 +51,10 @@ export default function SignUp() {
             placeholder="john.doe@example.com"
             required
             autoComplete="email"
+            value={form.data.email}
+            onChange={(e) => form.setData('email', e.target.value)}
           />
-          <Error key="email" />
+          <Error errorKey="email" />
         </div>
 
         {/* Password field */}
@@ -37,13 +67,15 @@ export default function SignUp() {
             required
             autoComplete="current-password"
             placeholder="••••••••••••••••••••"
+            value={form.data.password}
+            onChange={(e) => form.setData('password', e.target.value)}
           />
-          <Error key="password" />
+          <Error errorKey="password" />
         </div>
 
-        <Error key="auth" />
+        <Error errorKey="auth" />
 
-        <Button className="w-full" type="submit">
+        <Button className="w-full" type="submit" loading={form.processing}>
           Sign Up
         </Button>
       </form>

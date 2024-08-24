@@ -2,13 +2,15 @@ import { defineConfig } from '@adonisjs/auth'
 import { sessionGuard, sessionUserProvider } from '@adonisjs/auth/session'
 import type { InferAuthEvents, Authenticators as RawAuthenticators } from '@adonisjs/auth/types'
 
+export const afterAuthRedirectUrl = '/settings'
+
 const authConfig = defineConfig({
   default: 'web',
   guards: {
     web: sessionGuard({
       useRememberMeTokens: false,
       provider: sessionUserProvider({
-        model: () => import('../app/auth/database/models/user.js'),
+        model: () => import('#auth/database/models/user'),
       }),
     }),
   },

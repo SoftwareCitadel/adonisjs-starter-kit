@@ -5,14 +5,25 @@ import Input from '#common/ui/components/input'
 import Link from '#common/ui/components/link'
 import Error from '#common/ui/components/error'
 import Button from '#common/ui/components/button'
+import { useForm } from '@inertiajs/react'
 
 export default function SignIn() {
+  const form = useForm({
+    email: '',
+    password: '',
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    form.post('/auth/sign_in')
+  }
+
   return (
     <AuthLayout
       title="Sign in to your account."
       description="Welcome back! Please sign in to continue."
     >
-      <form action="#" method="POST" className="space-y-4">
+      <form className="space-y-4" onSubmit={handleSubmit}>
         {/* Email field */}
         <div>
           <Label htmlFor="email">Email address</Label>
@@ -23,8 +34,10 @@ export default function SignIn() {
             placeholder="john.doe@example.com"
             required
             autoComplete="email"
+            value={form.data.email}
+            onChange={(e) => form.setData('email', e.target.value)}
           />
-          <Error key="email" />
+          <Error errorKey="email" />
         </div>
 
         {/* Password field */}
@@ -40,11 +53,13 @@ export default function SignIn() {
             required
             autoComplete="current-password"
             placeholder="••••••••••••••••••••"
+            value={form.data.password}
+            onChange={(e) => form.setData('password', e.target.value)}
           />
-          <Error key="password" />
+          <Error errorKey="password" />
         </div>
 
-        <Error key="auth" />
+        <Error errorKey="auth" />
 
         <Button className="w-full" type="submit">
           Sign in
