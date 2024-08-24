@@ -4,6 +4,7 @@ import { Link } from '@inertiajs/react'
 import { buttonVariants } from '#common/ui/components/button'
 import { IconBrandGithub } from '@tabler/icons-react'
 import usePageProps from '#common/ui/hooks/use_page_props'
+import illustration from '../assets/illustration.png'
 
 export default function LandingPage() {
   const { appName } = usePageProps<{ appName: string }>()
@@ -30,7 +31,7 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="justify-end w-full hidden sm:flex">
-          <img src="/illustration.webp" className="md:w-full max-w-4xl" />
+          <img src={illustration} className="md:w-full max-w-4xl" />
         </div>
       </div>
     </MarketingLayout>
