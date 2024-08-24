@@ -12,14 +12,14 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const user = useUser()
   return (
     <main className="min-h-screen w-full">
-      <div className="sticky -top-16 z-20 border-b border-zinc-200 bg-white">
+      <div className="sticky -top-16 z-20 border-b border-neutral-200 bg-white">
         <div className="mx-auto w-full max-w-screen-xl px-2.5 lg:px-20">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center space-x-4">
               <Logo className="w-8" />
-              <IconSlash className="text-zinc-200" />
+              <IconSlash className="text-neutral-200" />
               <Avatar />
-              <span className="text-sm text-zinc-700 font-medium">{user.fullName}</span>
+              <span className="text-sm text-neutral-700 font-medium">{user.fullName}</span>
             </div>
             <div className="flex items-center space-x-6">
               <AccountDropdown />

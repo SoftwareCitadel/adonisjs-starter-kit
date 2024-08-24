@@ -12,8 +12,8 @@ export default function Tab({ href, label }: TabProps) {
 
   return (
     <Link className="relative" href={href}>
-      <div className="mx-1 my-1.5 rounded-md px-3 py-1.5 transition-all duration-75 hover:bg-zinc-100 active:bg-zinc-200">
-        <p className="text-sm text-zinc-600 hover:text-black">{label}</p>
+      <div className="mx-1 my-1.5 rounded-md px-3 py-1.5 transition-all duration-75 hover:bg-neutral-100 active:bg-neutral-200">
+        <p className="text-sm text-neutral-600 hover:text-black">{label}</p>
       </div>
 
       {path.startsWith(href) && (

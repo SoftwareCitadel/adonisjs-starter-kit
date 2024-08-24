@@ -28,7 +28,7 @@ export default function AccountDropdown() {
     <div className="relative inline-block text-left">
       <button
         type="button"
-        className="inline-flex items-center w-full rounded-md border border-zinc-300 shadow-sm px-2 py-1 bg-white text-sm font-medium text-zinc-700 hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500"
+        className="inline-flex items-center w-full rounded-md border border-neutral-300 shadow-sm px-2 py-1 bg-white text-sm font-medium text-neutral-700 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-500"
         onClick={toggleDropdown}
       >
         <Avatar />
@@ -51,13 +51,13 @@ export default function AccountDropdown() {
           >
             <Link
               href={`/settings`}
-              className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900 cursor-pointer"
+              className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 hover:text-neutral-900 cursor-pointer"
             >
               <IconSettings className="inline-block mr-2 h-4 w-4" />
               <span>Account Settings</span>
             </Link>
             <a
-              className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900 cursor-pointer"
+              className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 hover:text-neutral-900 cursor-pointer"
               onClick={handleSignOut}
             >
               <IconLogout className="inline-block mr-2 h-4 w-4" />

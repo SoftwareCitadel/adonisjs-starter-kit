@@ -29,10 +29,12 @@ export default function SignUp() {
         <div>
           <Label htmlFor="fullName">Full Name</Label>
           <Input
+            autoFocus
+            className="w-full"
             id="fullName"
             name="fullName"
             type="text"
-            placeholder="John Doe"
+            placeholder="Paul Valéry"
             required
             autoComplete="fullName"
             value={form.data.fullName}
@@ -45,10 +47,11 @@ export default function SignUp() {
         <div>
           <Label htmlFor="email">Email address</Label>
           <Input
+            className="w-full"
             id="email"
             name="email"
             type="email"
-            placeholder="john.doe@example.com"
+            placeholder="paul@valery.fr"
             required
             autoComplete="email"
             value={form.data.email}
@@ -61,6 +64,7 @@ export default function SignUp() {
         <div>
           <Label htmlFor="password">Password</Label>
           <Input
+            className="w-full"
             id="password"
             name="password"
             type="password"
@@ -80,7 +84,7 @@ export default function SignUp() {
         </Button>
       </form>
 
-      <p className="mt-6 text-center text-sm text-zinc-500">
+      <p className="mt-6 text-center text-sm text-neutral-500">
         Already a member? <Link href="/auth/sign_in">Sign in</Link>
       </p>
     </AuthLayout>

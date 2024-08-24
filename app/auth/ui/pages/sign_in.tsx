@@ -18,6 +18,13 @@ export default function SignIn() {
     form.post('/auth/sign_in')
   }
 
+  const fillDevelopmentValues = () => {
+    form.setData({
+      email: 'paul@valery.fr',
+      password: 'La Jeune Parque',
+    })
+  }
+
   return (
     <AuthLayout
       title="Sign in to your account."
@@ -28,11 +35,13 @@ export default function SignIn() {
         <div>
           <Label htmlFor="email">Email address</Label>
           <Input
+            className="w-full"
             id="email"
             name="email"
             type="email"
             placeholder="john.doe@example.com"
             required
+            autoFocus
             autoComplete="email"
             value={form.data.email}
             onChange={(e) => form.setData('email', e.target.value)}
@@ -47,6 +56,7 @@ export default function SignIn() {
             <Link href="/auth/forgot_password">Forgot password?</Link>
           </div>
           <Input
+            className="w-full"
             id="password"
             name="password"
             type="password"
@@ -61,12 +71,23 @@ export default function SignIn() {
 
         <Error errorKey="auth" />
 
-        <Button className="w-full" type="submit">
+        <Button className="w-full" type="submit" loading={form.processing}>
           Sign in
         </Button>
+
+        {process.env.NODE_ENV === 'development' && (
+          <Button
+            className="w-full"
+            variant="secondary"
+            type="button"
+            onClick={fillDevelopmentValues}
+          >
+            Fill Development Values
+          </Button>
+        )}
       </form>
 
-      <p className="mt-6 text-center text-sm text-zinc-500">
+      <p className="mt-6 text-center text-sm text-neutral-500">
         Not a member? <Link href="/auth/sign_up">Sign up</Link>
       </p>
     </AuthLayout>

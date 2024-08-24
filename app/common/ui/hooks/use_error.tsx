@@ -2,7 +2,6 @@ import usePageProps from './use_page_props'
 
 export default function useError(id: string | undefined): string | undefined {
   const props = usePageProps<{ errors?: Record<string, string> }>()
-  console.log('props', props)
   if (!props.errors) {
     return undefined
   }

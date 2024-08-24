@@ -18,10 +18,10 @@ export default function AuthLayout({ children, title, description }: AuthLayoutP
             </Link>
           </div>
 
-          <h2 className="mt-2 text-center text-2xl font-bold leading-9 tracking-tight text-zinc-900">
+          <h2 className="mt-2 text-center text-2xl font-bold leading-9 tracking-tight text-neutral-900">
             {title}
           </h2>
-          <h3 className="text-sm text-center font-medium text-zinc-500">{description}</h3>
+          <h3 className="text-sm text-center font-medium text-neutral-500">{description}</h3>
         </header>
 
         <hr />

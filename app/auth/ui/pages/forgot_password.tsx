@@ -15,6 +15,7 @@ export default function ForgotPassword() {
         <div>
           <Label htmlFor="email">Email address</Label>
           <Input
+            className="w-full"
             id="email"
             name="email"
             type="email"
