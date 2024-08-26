@@ -34,6 +34,7 @@ export default class User extends compose(BaseModel, AuthFinder) {
    */
   @afterCreate()
   static async createStripeCustomer(user: User) {
+    if (user.seeded) return
     await UserCreated.dispatch(user)
   }
 }

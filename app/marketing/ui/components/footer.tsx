@@ -1,5 +1,4 @@
 import Logo from '#common/ui/components/logo'
-import usePageProps from '#common/ui/hooks/use_page_props'
 import { Link } from '@inertiajs/react'
 import React from 'react'
 import SignUpToNewsletterForm from '#newsletter/ui/components/sign_up_to_newsletter_form'
@@ -66,7 +65,7 @@ export default function Footer() {
                 <li>
                   <a
                     className="text-neutral-700 hover:text-neutral-500 transition-colors"
-                    href="/privacy"
+                    href="/legal/privacy_policy"
                   >
                     Privacy Policy
                   </a>
@@ -74,7 +73,7 @@ export default function Footer() {
                 <li>
                   <a
                     className="text-neutral-700 hover:text-neutral-500 transition-colors"
-                    href="/tos"
+                    href="/legal/terms_of_service"
                   >
                     Terms of Service
                   </a>
@@ -82,7 +81,7 @@ export default function Footer() {
                 <li>
                   <a
                     className="text-neutral-700 hover:text-neutral-500 transition-colors"
-                    href="/tos"
+                    href="/legal/subprocessors"
                   >
                     Subprocessors
                   </a>

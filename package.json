@@ -17,6 +17,7 @@
   "imports": {
     "#start/*": "./start/*.js",
     "#config/*": "./config/*.js",
+    "#blog/*": "./app/blog/*.js",
     "#core/*": "./app/core/*.js",
     "#common/*": "./app/common/*.js",
     "#auth/*": "./app/auth/*.js",
@@ -53,6 +54,7 @@
     "vite": "^5.3.1"
   },
   "dependencies": {
+    "@adonisjs/ally": "^5.0.2",
     "@adonisjs/auth": "^9.2.3",
     "@adonisjs/core": "^6.9.1",
     "@adonisjs/cors": "^2.2.1",

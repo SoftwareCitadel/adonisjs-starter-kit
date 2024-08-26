@@ -3,6 +3,8 @@ import { BaseModel as AdonisBaseModel, beforeCreate, column } from '@adonisjs/lu
 import { DateTime } from 'luxon'
 
 export default class BaseModel extends AdonisBaseModel {
+  seeded: boolean = false
+
   /**
    * Cuid primary key.
    */

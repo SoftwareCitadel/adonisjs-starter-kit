@@ -31,7 +31,7 @@ export default function AccountDropdown() {
         className="inline-flex items-center w-full rounded-md border border-neutral-300 shadow-sm px-2 py-1 bg-white text-sm font-medium text-neutral-700 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-500"
         onClick={toggleDropdown}
       >
-        <Avatar />
+        <Avatar user={user} />
 
         <IconChevronDown className="ml-2 h-5 w-5" aria-hidden="true" />
       </button>

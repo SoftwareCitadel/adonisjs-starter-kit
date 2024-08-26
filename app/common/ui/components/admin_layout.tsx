@@ -19,7 +19,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             <div className="flex items-center space-x-4">
               <Logo className="w-8" />
               <IconSlash className="text-neutral-200" />
-              <Avatar />
+              <Avatar user={user} />
               <span className="text-sm text-neutral-700 font-medium">{user.fullName}</span>
             </div>
             <div className="flex items-center space-x-6">

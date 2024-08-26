@@ -16,10 +16,11 @@ const dbConfig = defineConfig({
           'app/users/database/migrations',
           'app/analytics/database/migrations',
           'app/newsletter/database/migrations',
+          'app/blog/database/migrations',
         ],
       },
       seeders: {
-        paths: ['app/auth/database/seeders'],
+        paths: ['app/auth/database/seeders', 'app/blog/database/seeders'],
       },
     },
   },

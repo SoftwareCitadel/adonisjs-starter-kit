@@ -42,4 +42,30 @@ export default await Env.create(new URL('../', import.meta.url), {
   */
   EMAIL_FROM: Env.schema.string(),
   RESEND_API_KEY: Env.schema.string(),
+
+  /*
+  |----------------------------------------------------------
+  | Variables for configuring ally package
+  |----------------------------------------------------------
+  */
+  DISCORD_CLIENT_ID: Env.schema.string.optional(),
+  DISCORD_CLIENT_SECRET: Env.schema.string.optional(),
+
+  FACEBOOK_CLIENT_ID: Env.schema.string.optional(),
+  FACEBOOK_CLIENT_SECRET: Env.schema.string.optional(),
+
+  GITHUB_CLIENT_ID: Env.schema.string.optional(),
+  GITHUB_CLIENT_SECRET: Env.schema.string.optional(),
+
+  GOOGLE_CLIENT_ID: Env.schema.string.optional(),
+  GOOGLE_CLIENT_SECRET: Env.schema.string.optional(),
+
+  LINKEDIN_CLIENT_ID: Env.schema.string.optional(),
+  LINKEDIN_CLIENT_SECRET: Env.schema.string.optional(),
+
+  SPOTIFY_CLIENT_ID: Env.schema.string.optional(),
+  SPOTIFY_CLIENT_SECRET: Env.schema.string.optional(),
+
+  TWITTER_CLIENT_ID: Env.schema.string.optional(),
+  TWITTER_CLIENT_SECRET: Env.schema.string.optional(),
 })

@@ -1,3 +1,4 @@
+import BlogPost from '#blog/database/models/blog_post'
 import { HttpContext } from '@adonisjs/core/http'
 import { Get } from '@softwarecitadel/girouette'
 
@@ -13,8 +14,9 @@ export default class MarketingController {
   }
 
   @Get('/blog', 'marketing.blog')
-  showBlogPage({ inertia }: HttpContext) {
-    return inertia.render('marketing/blog')
+  async showBlogPage({ inertia }: HttpContext) {
+    const posts = await BlogPost.query().preload('author').orderBy('publishedAt', 'desc')
+    return inertia.render('marketing/blog', { posts })
   }
 
   @Get('/blog/:articleId', 'marketing.article')
