@@ -10,6 +10,7 @@ interface DashboardLayoutProps extends React.PropsWithChildren {}
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const user = useUser()
+
   return (
     <main className="min-h-screen w-full">
       <div className="sticky -top-16 z-20 border-b border-neutral-200 bg-white">
@@ -26,6 +27,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             </div>
           </div>
           <div className="relative flex gap-x-2 overflow-x-auto transition-all">
+            <Tab href="/overview" label="Overview" />
             <Tab href="/billing" label="Billing" />
             <Tab href="/settings" label="Settings" />
           </div>

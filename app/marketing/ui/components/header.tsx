@@ -4,22 +4,19 @@ import { Link } from '@inertiajs/react'
 import { IconMenu2, IconX } from '@tabler/icons-react'
 import React, { useState } from 'react'
 import NavItem from './nav_item'
-import usePageProps from '#common/ui/hooks/use_page_props'
 import clsx from 'clsx'
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { appName } = usePageProps<{ appName: string }>()
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
   return (
-    <header className="max-w-5xl p-6 sm:px-0 mx-auto flex flex-wrap items-center justify-between">
+    <header className="max-w-5xl p-6 lg:px-0 mx-auto flex flex-wrap items-center justify-between">
       <Link className="flex items-center space-x-4" href="/">
         <Logo className="h-8 w-8" />
-        <span className="font-semibold text-lg">{appName}</span>
+        <span className="font-semibold text-lg">{import.meta.env.VITE_APP_NAME}</span>
       </Link>
       <nav className="hidden text-sm text-center gap-x-1 md:flex">
         <NavItem href="/">About</NavItem>

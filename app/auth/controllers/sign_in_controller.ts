@@ -1,4 +1,4 @@
-import User from '#auth/database/models/user'
+import User from '#users/database/models/user'
 import { signInValidator } from '#auth/validators'
 import { afterAuthRedirectUrl } from '#config/auth'
 import { middleware } from '#start/kernel'

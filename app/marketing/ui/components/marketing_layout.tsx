@@ -8,7 +8,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="px-6 lg:px-0">{children}</main>
       <Footer />
     </>
   )

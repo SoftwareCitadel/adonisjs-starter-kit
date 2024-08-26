@@ -1,10 +1,20 @@
-import UserCreated from '#auth/events/user_created'
+import PageVisited from '#analytics/events/page_visited'
+import UserCreated from '#users/events/user_created'
 import emitter from '@adonisjs/core/services/emitter'
 import logger from '@adonisjs/core/services/logger'
 
-const AssignStripeCustomer = () => import('#billing/listeners/assign_stripe_customer')
+/**
+ * User-related events.
+ */
+emitter.listen(UserCreated, [
+  () => import('#billing/listeners/assign_stripe_customer'),
+  () => import('#users/listeners/send_welcome_email'),
+])
 
-emitter.on(UserCreated, [AssignStripeCustomer])
+/**
+ * Analytics-related events.
+ */
+emitter.on(PageVisited, [() => import('#analytics/listeners/gather_visit_information')])
 
 /**
  * Log SQL queries, when debug mode is enabled.

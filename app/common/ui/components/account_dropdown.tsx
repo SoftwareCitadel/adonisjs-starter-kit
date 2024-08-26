@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { IconChevronDown, IconSettings, IconLogout } from '@tabler/icons-react'
+import { IconChevronDown, IconSettings, IconLogout, IconUsers } from '@tabler/icons-react'
 import { Link, useForm } from '@inertiajs/react'
 import Avatar from './avatar'
 import useUser from '#auth/ui/hooks/use_user'
@@ -56,6 +56,15 @@ export default function AccountDropdown() {
               <IconSettings className="inline-block mr-2 h-4 w-4" />
               <span>Account Settings</span>
             </Link>
+            {user.role === 'admin' ? (
+              <Link
+                href={`/admin/users`}
+                className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 hover:text-neutral-900 cursor-pointer"
+              >
+                <IconUsers className="inline-block mr-2 h-4 w-4" />
+                <span>Administration</span>
+              </Link>
+            ) : null}
             <a
               className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 hover:text-neutral-900 cursor-pointer"
               onClick={handleSignOut}

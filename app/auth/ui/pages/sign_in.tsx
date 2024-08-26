@@ -18,10 +18,17 @@ export default function SignIn() {
     form.post('/auth/sign_in')
   }
 
-  const fillDevelopmentValues = () => {
+  const fillCustomerValues = () => {
     form.setData({
       email: 'paul@valery.fr',
       password: 'La Jeune Parque',
+    })
+  }
+
+  const fillAdminValues = () => {
+    form.setData({
+      email: 'user@admin.com',
+      password: 'adminadmin',
     })
   }
 
@@ -75,16 +82,23 @@ export default function SignIn() {
           Sign in
         </Button>
 
-        {process.env.NODE_ENV === 'development' && (
-          <Button
-            className="w-full"
-            variant="secondary"
-            type="button"
-            onClick={fillDevelopmentValues}
-          >
-            Fill Development Values
-          </Button>
-        )}
+        {process.env.NODE_ENV === 'development' ? (
+          <>
+            <Button
+              className="w-full"
+              variant="secondary"
+              type="button"
+              onClick={fillCustomerValues}
+            >
+              Fill Customer Credentials
+              <span className="ml-1 bg-zinc-100 shadow-sm border rounded-lg px-2 py-1">DEV</span>
+            </Button>
+            <Button className="w-full" variant="secondary" type="button" onClick={fillAdminValues}>
+              Fill Admin Credentials
+              <span className="ml-1 bg-zinc-100 shadow-sm border rounded-lg px-2 py-1">DEV</span>
+            </Button>
+          </>
+        ) : null}
       </form>
 
       <p className="mt-6 text-center text-sm text-neutral-500">

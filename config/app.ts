@@ -16,7 +16,9 @@ export const appKey = new Secret(env.get('APP_KEY'))
  * The app name is used to refer to the application's name
  * in different places of your AdonisJS project.
  */
-export const appName = env.get('APP_NAME')
+export const appName = env.get('VITE_APP_NAME')
+
+export const appUrl = env.get('APP_URL')
 
 /**
  * The configuration settings used by the HTTP server

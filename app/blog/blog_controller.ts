@@ -10,6 +10,6 @@ export default class BlogController {
   @Get('/admin/blog')
   @Middleware([middleware.auth(), middleware.admin()])
   async index({ inertia }: HttpContext) {
-    return 'blog/index'
+    return inertia.render('blog/index')
   }
 }

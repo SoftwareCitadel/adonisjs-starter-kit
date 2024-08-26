@@ -1,4 +1,4 @@
-import User from '#auth/database/models/user'
+import User from '#users/database/models/user'
 import { signUpValidator } from '#auth/validators'
 import { middleware } from '#start/kernel'
 import { HttpContext } from '@adonisjs/core/http'

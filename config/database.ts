@@ -12,7 +12,11 @@ const dbConfig = defineConfig({
       useNullAsDefault: true,
       migrations: {
         naturalSort: true,
-        paths: ['app/auth/database/migrations'],
+        paths: [
+          'app/users/database/migrations',
+          'app/analytics/database/migrations',
+          'app/newsletter/database/migrations',
+        ],
       },
       seeders: {
         paths: ['app/auth/database/seeders'],

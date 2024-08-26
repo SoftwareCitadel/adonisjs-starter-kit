@@ -1,8 +1,9 @@
 import hash from '@adonisjs/core/services/hash'
 import { compose } from '@adonisjs/core/helpers'
 import { withAuthFinder } from '@adonisjs/auth/mixins/lucid'
-import { column } from '@adonisjs/lucid/orm'
+import { afterCreate, column } from '@adonisjs/lucid/orm'
 import BaseModel from '#common/database/models/base_model'
+import UserCreated from '#users/events/user_created'
 
 const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   uids: ['email'],
@@ -10,6 +11,9 @@ const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
 })
 
 export default class User extends compose(BaseModel, AuthFinder) {
+  /**
+   * Regular columns.
+   */
   @column()
   declare fullName: string
 
@@ -24,4 +28,12 @@ export default class User extends compose(BaseModel, AuthFinder) {
 
   @column()
   declare stripeCustomerId: string | null
+
+  /**
+   * Hooks.
+   */
+  @afterCreate()
+  static async createStripeCustomer(user: User) {
+    await UserCreated.dispatch(user)
+  }
 }

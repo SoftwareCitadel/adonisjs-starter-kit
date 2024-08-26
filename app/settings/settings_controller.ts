@@ -1,4 +1,4 @@
-import User from '#auth/database/models/user'
+import User from '#users/database/models/user'
 import type { HttpContext } from '@adonisjs/core/http'
 import { settingsValidator } from './validator.js'
 import { Delete, Get, Middleware, Patch } from '@softwarecitadel/girouette'

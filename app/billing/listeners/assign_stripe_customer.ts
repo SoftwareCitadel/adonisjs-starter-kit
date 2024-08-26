@@ -1,11 +1,11 @@
-import User from '#auth/database/models/user'
 import env from '#start/env'
 import { inject } from '@adonisjs/core'
 import Stripe from 'stripe'
+import UserCreated from '#users/events/user_created'
 
 export default class AssignStripeCustomer {
   @inject()
-  async handle({ user }: { user: User }) {
+  async handle({ user }: UserCreated) {
     /**
      * Create a new Stripe instance.
      */

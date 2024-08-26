@@ -2,14 +2,12 @@ import Logo from '#common/ui/components/logo'
 import usePageProps from '#common/ui/hooks/use_page_props'
 import { Link } from '@inertiajs/react'
 import React from 'react'
-import SignUpToNewsletterForm from './sign_up_to_newsletter_form'
+import SignUpToNewsletterForm from '#newsletter/ui/components/sign_up_to_newsletter_form'
 
 export default function Footer() {
-  const { appName } = usePageProps<{ appName: string }>()
-
   return (
     <footer className="border-t">
-      <div className="max-w-5xl space-y-6 p-6 mx-auto my-8 md:p-4">
+      <div className="max-w-5xl space-y-6 p-6 mx-auto my-8 lg:p-0">
         <div className="flex flex-col justify-between gap-x-4 md:flex-row">
           <div className="flex flex-col gap-y-4 max-w-96">
             {/* Branding part */}
@@ -19,12 +17,12 @@ export default function Footer() {
                   <Logo />
                 </Link>
               </div>
-              <span className="font-medium text-lg">{appName}</span>
+              <span className="font-medium text-lg">{import.meta.env.VITE_APP_NAME}</span>
             </div>
 
             {/* Newsletter part */}
             <p className="text-sm text-neutral-500">
-              Join the newsletter to get {appName}'s latest news.
+              Join the newsletter to get {import.meta.env.VITE_APP_NAME}'s latest news.
             </p>
             <SignUpToNewsletterForm />
           </div>
@@ -130,7 +128,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="flex flex-col justify-between text-sm text-center text-neutral-500 md:flex-row md:text-left">
           <p className="">
-            © {new Date().getFullYear()} {appName}.
+            © {new Date().getFullYear()} {import.meta.env.VITE_APP_NAME}.
           </p>
           <p className="">Made with ❤️ from 🇫🇷.</p>
         </div>

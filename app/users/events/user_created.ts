@@ -1,4 +1,4 @@
-import User from '#auth/database/models/user'
+import User from '#users/database/models/user'
 import { BaseEvent } from '@adonisjs/core/events'
 
 export default class UserCreated extends BaseEvent {

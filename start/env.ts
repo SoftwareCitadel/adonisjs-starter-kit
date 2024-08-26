@@ -12,7 +12,8 @@
 import { Env } from '@adonisjs/core/env'
 
 export default await Env.create(new URL('../', import.meta.url), {
-  APP_NAME: Env.schema.string(),
+  VITE_APP_NAME: Env.schema.string(),
+  APP_URL: Env.schema.string(),
   NODE_ENV: Env.schema.enum(['development', 'production', 'test'] as const),
   PORT: Env.schema.number(),
   APP_KEY: Env.schema.string(),
@@ -31,5 +32,14 @@ export default await Env.create(new URL('../', import.meta.url), {
   | Variables for configuring Stripe
   |----------------------------------------------------------
   */
+  STRIPE_PUBLIC_KEY: Env.schema.string(),
   STRIPE_SECRET_KEY: Env.schema.string(),
+
+  /*
+  |----------------------------------------------------------
+  | Variables for configuring the mail package
+  |----------------------------------------------------------
+  */
+  EMAIL_FROM: Env.schema.string(),
+  RESEND_API_KEY: Env.schema.string(),
 })
