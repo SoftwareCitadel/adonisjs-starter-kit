@@ -4,7 +4,7 @@ import { Get, Middleware } from '@softwarecitadel/girouette'
 
 export default class AnalyticsController {
   @Get('/admin/analytics')
-  @Middleware(middleware.admin())
+  @Middleware([middleware.auth(), middleware.admin()])
   index({ inertia }: HttpContext) {
     return inertia.render('analytics/index')
   }

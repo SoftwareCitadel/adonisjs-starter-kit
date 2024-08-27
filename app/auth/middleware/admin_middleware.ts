@@ -8,11 +8,11 @@ import type { NextFn } from '@adonisjs/core/types/http'
 export default class AdminMiddleware {
   async handle({ auth, response }: HttpContext, next: NextFn) {
     if (!auth.user) {
-      return response.unauthorized()
+      return response.unauthorized('You must be logged in to access this page')
     }
 
     if (auth.user.role !== 'admin') {
-      return response.unauthorized()
+      return response.unauthorized('You must be an admin to access this page')
     }
 
     return next()

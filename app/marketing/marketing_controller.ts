@@ -19,8 +19,9 @@ export default class MarketingController {
     return inertia.render('marketing/blog', { posts })
   }
 
-  @Get('/blog/:articleId', 'marketing.article')
-  showArticlePage({ inertia }: HttpContext) {
-    return inertia.render('marketing/article')
+  @Get('/blog/:postId', 'marketing.post')
+  async showPostPage({ params, inertia }: HttpContext) {
+    const post = await BlogPost.query().where('id', params.postId).preload('author').firstOrFail()
+    return inertia.render('marketing/post', { post })
   }
 }

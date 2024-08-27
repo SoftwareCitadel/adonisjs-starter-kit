@@ -6,14 +6,14 @@ import React, { useState } from 'react'
 import NavItem from './nav_item'
 import clsx from 'clsx'
 
-const Header = () => {
+export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
   return (
-    <header className="max-w-5xl p-6 lg:px-0 mx-auto flex flex-wrap items-center justify-between">
+    <nav className="max-w-5xl p-6 lg:px-0 mx-auto flex flex-wrap items-center justify-between">
       <Link className="flex items-center space-x-4" href="/">
         <Logo className="h-8 w-8" />
         <span className="font-semibold text-lg">{import.meta.env.VITE_APP_NAME}</span>
@@ -60,8 +60,6 @@ const Header = () => {
           </Link>
         </ul>
       </div>
-    </header>
+    </nav>
   )
 }
-
-export default Header

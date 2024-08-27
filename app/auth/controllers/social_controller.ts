@@ -4,12 +4,12 @@ import { HttpContext } from '@adonisjs/core/http'
 import { Get } from '@softwarecitadel/girouette'
 
 export default class SocialController {
-  @Get('/auth/:provider/redirect')
+  @Get('/auth/:provider/redirect', 'social.redirect')
   redirect({ ally, params }: HttpContext) {
     return ally.use(params.provider).redirect()
   }
 
-  @Get('/auth/:provider/callback')
+  @Get('/auth/:provider/callback', 'social.callback')
   async callback({ ally, params, auth, response }: HttpContext) {
     const provider = ally.use(params.provider)
     const socialUser = await provider.user()

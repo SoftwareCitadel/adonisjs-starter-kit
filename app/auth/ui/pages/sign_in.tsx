@@ -46,7 +46,7 @@ export default function SignInPage() {
             id="email"
             name="email"
             type="email"
-            placeholder="john.doe@example.com"
+            placeholder="paul@valery.fr"
             required
             autoFocus
             autoComplete="email"

@@ -39,4 +39,9 @@ export default class BlogPost extends BaseModel {
 
   @column()
   declare authorId?: string
+
+  /**
+   * React component.
+   */
+  declare render: (props: { post: BlogPost }) => JSX.Element
 }

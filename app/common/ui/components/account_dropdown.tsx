@@ -58,7 +58,7 @@ export default function AccountDropdown() {
             </Link>
             {user.role === 'admin' ? (
               <Link
-                href={`/admin/users`}
+                href={`/admin/blog`}
                 className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 hover:text-neutral-900 cursor-pointer"
               >
                 <IconUsers className="inline-block mr-2 h-4 w-4" />

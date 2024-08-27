@@ -21,7 +21,7 @@ export default function Faq() {
   ]
 
   return (
-    <div className="text-black border-y py-24 sm:py-28 px-4 sm:px-0">
+    <div className="text-black border-y py-24 sm:py-32 px-4 sm:px-0">
       <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-center">
         Frequently Asked Questions
       </h2>

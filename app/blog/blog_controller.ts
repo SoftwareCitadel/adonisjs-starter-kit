@@ -12,4 +12,10 @@ export default class BlogController {
   async index({ inertia }: HttpContext) {
     return inertia.render('blog/index')
   }
+
+  @Get('/admin/blog/create')
+  @Middleware([middleware.auth(), middleware.admin()])
+  create({ inertia }: HttpContext) {
+    return inertia.render('blog/create')
+  }
 }

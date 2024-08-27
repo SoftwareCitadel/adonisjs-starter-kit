@@ -3,14 +3,10 @@ import Tab from './tab'
 import Logo from './logo'
 import AccountDropdown from './account_dropdown'
 import { IconSlash } from '@tabler/icons-react'
-import Avatar from './avatar'
-import useUser from '#auth/ui/hooks/use_user'
 
-interface DashboardLayoutProps extends React.PropsWithChildren {}
+interface AdminLayoutProps extends React.PropsWithChildren {}
 
-export default function DashboardLayout({ children }: DashboardLayoutProps) {
-  const user = useUser()
-
+export default function AdminLayout({ children }: AdminLayoutProps) {
   return (
     <main className="min-h-screen w-full">
       <div className="sticky -top-16 z-20 border-b border-neutral-200 bg-white">
@@ -19,14 +15,14 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             <div className="flex items-center space-x-4">
               <Logo className="w-8" />
               <IconSlash className="text-neutral-200" />
-              <Avatar user={user} />
-              <span className="text-sm text-neutral-700 font-medium">{user.fullName}</span>
+              <span className="text-sm text-neutral-700 font-bold">Administration Panel</span>
             </div>
             <div className="flex items-center space-x-6">
               <AccountDropdown />
             </div>
           </div>
           <div className="relative flex gap-x-2 overflow-x-auto transition-all">
+            <Tab href="/admin/blog" label="Blog" />
             <Tab href="/admin/users" label="Users" />
             <Tab href="/admin/analytics" label="Analytics" />
           </div>

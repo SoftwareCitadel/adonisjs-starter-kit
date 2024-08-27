@@ -10,7 +10,7 @@ export default class NewsletterController {
 
     await NewsletterReader.firstOrCreate({ email }, { email })
 
-    session.flash('newsletter.registered', true)
+    session.flash('registered_to_newsletter', 'success')
 
     return response.redirect().back()
   }

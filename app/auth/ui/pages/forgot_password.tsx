@@ -42,7 +42,7 @@ export default function ForgotPasswordPage() {
               id="email"
               name="email"
               type="email"
-              placeholder="john.doe@example.com"
+              placeholder="paul@valery.fr"
               required
               autoComplete="email"
               autoFocus

@@ -45,9 +45,7 @@ export default class extends BaseSeeder {
       {
         title: 'Getting Started with AdonisJS',
         shortDescription: 'Learn the basics of AdonisJS framework',
-        content: `# Getting Started with AdonisJS
-
-AdonisJS is a Node.js web framework that provides a robust set of tools for building web applications. In this article, we'll cover the basics of setting up an AdonisJS project and creating your first route.
+        content: `AdonisJS is a Node.js web framework that provides a robust set of tools for building web applications. In this article, we'll cover the basics of setting up an AdonisJS project and creating your first route.
 
 ## Installation
 
@@ -79,9 +77,7 @@ Stay tuned for more in-depth tutorials on AdonisJS!`,
       {
         title: 'Mastering Lucid ORM',
         shortDescription: 'Deep dive into Lucid ORM features',
-        content: `# Mastering Lucid ORM in AdonisJS
-
-Lucid is the ORM (Object-Relational Mapping) used in AdonisJS. It provides an elegant way to interact with your database. Let's explore some of its key features.
+        content: `Lucid is the ORM (Object-Relational Mapping) used in AdonisJS. It provides an elegant way to interact with your database. Let's explore some of its key features.
 
 ## Defining Models
 
@@ -125,8 +121,7 @@ This is just scratching the surface of what Lucid can do. In future articles, we
       {
         title: 'Building RESTful APIs with AdonisJS',
         shortDescription: 'Learn how to create robust APIs using AdonisJS',
-        content: `# Building RESTful APIs with AdonisJS
-
+        content: `
 AdonisJS provides a powerful set of tools for building RESTful APIs. In this article, we'll walk through the process of creating a simple API.
 
 ## Setting Up Routes
