@@ -2,7 +2,7 @@ import env from '#start/env'
 import User from '#users/database/models/user'
 import { BaseMail } from '@adonisjs/mail'
 import { render } from '@react-email/components'
-import WelcomeEmail from '#users/emails/welcome'
+import WelcomeEmail from '#users/emails/welcome_email'
 import { appName } from '#config/app'
 
 export default class WelcomeNotification extends BaseMail {

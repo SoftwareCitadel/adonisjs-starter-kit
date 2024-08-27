@@ -10,13 +10,13 @@ export interface BlogPostCardProps {
 export default function BlogPostCard({ post }: BlogPostCardProps) {
   return (
     <Link
-      className="bg-white h-full rounded-lg shadow-md overflow-hidden flex flex-col"
+      className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
       href={`/blog/${post.id}`}
     >
       {post.thumbnail ? (
-        <img src={post.thumbnail} alt={post.title} className="m-1.5 w-full h-48 object-cover" />
+        <img src={post.thumbnail} alt={post.title} className="m-1.5 w-full min-h-48 object-cover" />
       ) : (
-        <div className="m-1.5 h-48 rounded bg-gradient-to-b from-red-400 to-orange-300"></div>
+        <div className="m-1.5 min-h-48 rounded bg-gradient-to-b from-red-400 to-orange-300"></div>
       )}
       <div className="p-4 flex flex-col flex-grow">
         <div className="mb-2">
@@ -29,6 +29,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
             </span>
           ))}
         </div>
+        <p className="text-neutral-500 text-xs">{post.publishedAtFormatted}</p>
         <h2 className="text-xl font-bold mb-2">{post.title}</h2>
         <p className="text-neutral-700 mb-4 text-sm flex-grow">{post.shortDescription}</p>
         <div className="flex items-center gap-x-2 mt-auto">

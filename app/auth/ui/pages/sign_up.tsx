@@ -7,7 +7,7 @@ import Error from '#common/ui/components/error'
 import Button from '#common/ui/components/button'
 import { useForm } from '@inertiajs/react'
 
-export default function SignUp() {
+export default function SignUpPage() {
   const form = useForm({
     fullName: '',
     email: '',

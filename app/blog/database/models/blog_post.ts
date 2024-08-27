@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { belongsTo, column } from '@adonisjs/lucid/orm'
+import { belongsTo, column, computed } from '@adonisjs/lucid/orm'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import User from '#users/database/models/user'
 import BaseModel from '#common/database/models/base_model'
@@ -25,6 +25,11 @@ export default class BlogPost extends BaseModel {
 
   @column.dateTime()
   declare publishedAt: DateTime | null
+
+  @computed()
+  get publishedAtFormatted() {
+    return this.publishedAt?.toLocaleString(DateTime.DATE_FULL) ?? 'Unpublished'
+  }
 
   /**
    * Relationships.

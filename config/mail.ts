@@ -1,8 +1,11 @@
+import DevelopmentMailTransport from '#core/development_mail_transport'
 import env from '#start/env'
 import { defineConfig, transports } from '@adonisjs/mail'
 
+const defaultMailer = 'resend'
+
 const mailConfig = defineConfig({
-  default: 'resend',
+  default: env.get('NODE_ENV') === 'development' ? 'development' : defaultMailer,
 
   /**
    * The mailers object can be used to configure multiple mailers
@@ -10,6 +13,8 @@ const mailConfig = defineConfig({
    * options.
    */
   mailers: {
+    development: () => new DevelopmentMailTransport(),
+
     resend: transports.resend({
       key: env.get('RESEND_API_KEY'),
       baseUrl: 'https://api.resend.com',
