@@ -9,8 +9,8 @@
   @viteReactRefresh()
   @inertiaHead()
   @vite([
-    'app/core/ui/app/app.tsx', 
-    `app/${page.component.split('/')[0]}/ui/pages/${page.component.split('/').splice(1)}.tsx`
+    'app/core/ui/app/app.tsx',
+    `app/${page.component.split('/')[0]}/ui/pages/${page.component.split('/').splice(1).join('/')}.tsx`
   ])
 </head>
 <body class="antialiased h-full overflow-y-scroll">
