@@ -17,8 +17,8 @@ createInertiaApp({
     const firstPart = name.split('/')[0]
     const rest = name.split('/').slice(1).join('/')
     return resolvePageComponent(
-      `../../../${firstPart}/ui/pages/${rest}.tsx`,
-      import.meta.glob('../../../*/ui/pages/**/*.tsx')
+      `/app/${firstPart}/ui/pages/${rest}.tsx`,
+      import.meta.glob('/app/*/ui/pages/**/*.tsx')
     )
   },
 

@@ -44,7 +44,7 @@ export default defineConfig({
     () => import('@adonisjs/inertia/inertia_provider'),
     () => import('@adonisjs/mail/mail_provider'),
     () => import('@softwarecitadel/girouette/girouette_provider'),
-    () => import('@adonisjs/ally/ally_provider')
+    () => import('@adonisjs/ally/ally_provider'),
   ],
 
   /*
