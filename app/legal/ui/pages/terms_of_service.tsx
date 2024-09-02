@@ -18,12 +18,11 @@ export default function TermsOfServicePage() {
           <div className="p-6">
             <h3 className="font-semibold text-lg">1. Terms</h3>
             <p>
-              By accessing the website at {import.meta.env.VITE_APP_URL}, you are agreeing to be
-              bound by these terms of service, all applicable laws and regulations, and agree that
-              you are responsible for compliance with any applicable local laws. If you do not agree
-              with any of these terms, you are prohibited from using or accessing this site. The
-              materials contained in this website are protected by applicable copyright and trade
-              mark law.
+              By accessing this website, you are agreeing to be bound by these terms of service, all
+              applicable laws and regulations, and agree that you are responsible for compliance
+              with any applicable local laws. If you do not agree with any of these terms, you are
+              prohibited from using or accessing this site. The materials contained in this website
+              are protected by applicable copyright and trade mark law.
             </p>
           </div>
           <div className="p-6">

@@ -3,10 +3,10 @@ import MarketingLayout from '../components/marketing_layout'
 import { IconArticle } from '@tabler/icons-react'
 import BlogPost from '#blog/database/models/blog_post'
 import Avatar from '#common/ui/components/avatar'
-import remarkGfm from 'remark-gfm'
-import ReactMarkdown from 'react-markdown'
 import JoinNewsletterSection from '../components/join_newsletter_section'
 import { Head } from '@inertiajs/react'
+import Markdown from 'markdown-to-jsx'
+import Code from '../components/code'
 
 export default function Post({ post }: { post: BlogPost }) {
   return (
@@ -48,7 +48,13 @@ export default function Post({ post }: { post: BlogPost }) {
         </header>
 
         <main className="prose prose-neutral my-12">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+          <Markdown
+            options={{
+              overrides: { code: { component: Code } },
+            }}
+          >
+            {post.content}
+          </Markdown>
         </main>
 
         <JoinNewsletterSection />

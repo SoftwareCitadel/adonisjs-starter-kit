@@ -18,6 +18,17 @@ export default {
     transparent: 'transparent',
     current: 'currentColor',
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            '--tw-prose-pre-bg': 'transparent !important',
+            'pre': {
+              margin: '0 !important',
+              padding: '0 !important',
+            },
+          },
+        },
+      },
       colors: {
         'tremor': {
           brand: {
