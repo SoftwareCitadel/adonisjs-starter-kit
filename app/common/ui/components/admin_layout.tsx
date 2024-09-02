@@ -3,6 +3,7 @@ import Tab from './tab'
 import Logo from './logo'
 import AccountDropdown from './account_dropdown'
 import { IconSlash } from '@tabler/icons-react'
+import { Link } from '@inertiajs/react'
 
 interface AdminLayoutProps extends React.PropsWithChildren {}
 
@@ -13,7 +14,9 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         <div className="mx-auto w-full max-w-screen-xl px-2.5 lg:px-20">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Logo className="w-8" />
+              <Link className="hover:opacity-75 transition" href="/overview">
+                <Logo className="w-8" />
+              </Link>
               <IconSlash className="text-neutral-200" />
               <span className="text-sm text-neutral-700 font-bold">Administration Panel</span>
             </div>

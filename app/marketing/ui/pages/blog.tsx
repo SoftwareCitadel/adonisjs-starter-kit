@@ -1,6 +1,6 @@
 import React from 'react'
 import MarketingLayout from '../components/marketing_layout'
-import { IconArticle, IconMail, IconPaperclip } from '@tabler/icons-react'
+import { IconArticle } from '@tabler/icons-react'
 import BlogPostCard from '../components/blog_post_card'
 import BlogPost from '#blog/database/models/blog_post'
 import JoinNewsletterSection from '../components/join_newsletter_section'

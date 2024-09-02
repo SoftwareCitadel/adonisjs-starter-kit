@@ -23,7 +23,7 @@ export default class ResetPasswordController {
 
   @Post('/auth/reset_password/:email', 'auth.reset_password.handle')
   @Middleware(middleware.guest())
-  async handle({ request, session, params, response }: HttpContext) {
+  async handle({ request, params, response }: HttpContext) {
     /**
      * Verify the request signature before proceeding.
      */

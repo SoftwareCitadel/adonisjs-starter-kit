@@ -10,8 +10,6 @@ export default function SignUpToNewsletterForm() {
   })
   const success = useFlashMessage('registered_to_newsletter')
 
-  console.log('registered_to_newsletter', success)
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     form.post('/newsletter/register', {

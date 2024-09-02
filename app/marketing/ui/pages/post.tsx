@@ -1,16 +1,28 @@
 import React from 'react'
 import MarketingLayout from '../components/marketing_layout'
-import { IconArticle, IconMail } from '@tabler/icons-react'
+import { IconArticle } from '@tabler/icons-react'
 import BlogPost from '#blog/database/models/blog_post'
-import SignUpToNewsletterForm from '#newsletter/ui/components/sign_up_to_newsletter_form'
 import Avatar from '#common/ui/components/avatar'
 import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import JoinNewsletterSection from '../components/join_newsletter_section'
+import { Head } from '@inertiajs/react'
 
 export default function Post({ post }: { post: BlogPost }) {
   return (
     <MarketingLayout>
+      <Head title={post.title}>
+        <meta name="description" content={post.shortDescription} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.shortDescription} />
+        <meta property="og:image" content={`/blog/${post.id}/og`} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.shortDescription} />
+        <meta name="twitter:image" content={`/blog/${post.id}/og`} />
+      </Head>
+
       <div className="min-h-[calc(100vh-86px)] mx-auto max-w-2xl h-full flex flex-col items-center p-6 lg:mt-12">
         <header className="text-center gap-y-2 pb-8 border-b w-full flex flex-col items-center">
           <p className="text-neutral-500 text-xs">{post.publishedAtFormatted}</p>

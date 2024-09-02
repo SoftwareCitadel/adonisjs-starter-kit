@@ -1,16 +1,13 @@
 import BlogPost from '#blog/database/models/blog_post'
+import { inject } from '@adonisjs/core'
 import { HttpContext } from '@adonisjs/core/http'
 import { Get } from '@softwarecitadel/girouette'
+import OGService from './og_service.js'
 
 export default class MarketingController {
   @Get('/', 'marketing.landing')
   showLandingPage({ inertia }: HttpContext) {
     return inertia.render('marketing/landing')
-  }
-
-  @Get('/pricing', 'marketing.pricing')
-  showPricingPage({ inertia }: HttpContext) {
-    return inertia.render('marketing/pricing')
   }
 
   @Get('/blog', 'marketing.blog')
@@ -20,8 +17,16 @@ export default class MarketingController {
   }
 
   @Get('/blog/:postId', 'marketing.post')
-  async showPostPage({ params, inertia }: HttpContext) {
+  async showBlogPostPage({ params, inertia }: HttpContext) {
     const post = await BlogPost.query().where('id', params.postId).preload('author').firstOrFail()
     return inertia.render('marketing/post', { post })
+  }
+
+  @Get('/blog/:postId/og', 'marketing.post.og')
+  @inject()
+  async renderOpenGraphImageForBlogPost({ params, response }: HttpContext, ogService: OGService) {
+    const post = await BlogPost.query().where('id', params.postId).firstOrFail()
+    const image = await ogService.generateImage(post.title)
+    return response.header('Content-Type', 'image/png').send(image)
   }
 }

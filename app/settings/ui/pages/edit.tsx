@@ -26,6 +26,8 @@ export default function Edit() {
 
   return (
     <DashboardLayout>
+      <h2 className="text-xl sm:text-2xl font-semibold">Settings</h2>
+
       {/* Account settings card */}
       <Card title="Account settings">
         <form className="space-y-4" onSubmit={handleSubmit}>

@@ -6,7 +6,7 @@
 
 # AdonisJS Starter Kit
 
-> AdonisJS Starter Kit is a starter kit made for developers who want to put their next SaaS idea on the market rapidly.
+> AdonisJS Starter Kit is a starter kit made for developers who want to start their next project very fast.
 
 ## Installation
 

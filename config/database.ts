@@ -20,7 +20,7 @@ const dbConfig = defineConfig({
         ],
       },
       seeders: {
-        paths: ['app/auth/database/seeders', 'app/blog/database/seeders'],
+        paths: ['app/users/database/seeders', 'app/blog/database/seeders'],
       },
     },
   },

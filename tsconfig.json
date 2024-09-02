@@ -5,5 +5,5 @@
     "outDir": "./build",
     "jsx": "react-jsx"
   },
-  "exclude": ["node_modules", "build", "app/**/**/*.tsx", "resources/**/*"]
+  "exclude": ["node_modules", "build", "app/**/*.tsx", "!app/**/emails/**/*.tsx", "resources/**/*"]
 }
